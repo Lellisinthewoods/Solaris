@@ -10,6 +10,8 @@ let button5 = document.getElementById(`5`);
 let button6 = document.getElementById(`6`);
 let button7 = document.getElementById(`7`);
 let button8 = document.getElementById(`8`);
+let h1 = document.getElementById(`h1`);
+let p = document.querySelector(`p`);
 
 /*async function getKey() 
 {
@@ -26,15 +28,25 @@ async function getPlanets(number)
         headers: { "x-zocom": `${API_KEY}`},
       });
     planets_list = await response.json();
+    let planetName = planets_list.bodies[number].name;
+    let planetInfo = planets_list.bodies[number].desc;
     console.log(planets_list.bodies[number].name)
+    h1.innerHTML='';
+    let template = `
+    <article>
+        <h1>${planetName}</h1>
+        <p>Class: ${planetInfo}</p>
+    </article>
+    `
+    h1.insertAdjacentHTML('beforeend', template);
 }
 
-async function displayPlanets(planets) //behövs denna?
+async function displayPlanets(number) //behövs denna?
 {
-    for (const planet of planets)
+    /*for (const planet of planets)
     {
         console.log(planet)
-    }
+    }*/
 }
 
 button0.addEventListener(`click`, function() {
