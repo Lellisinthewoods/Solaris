@@ -29,13 +29,23 @@ async function getPlanets(number)
       });
     planets_list = await response.json();
     let planetName = planets_list.bodies[number].name;
-    let planetInfo = planets_list.bodies[number].desc;
-    console.log(planets_list.bodies[number].name)
+    let planetDesc = planets_list.bodies[number].desc;
+    let planetLatinName = planets_list.bodies[number].latinName;
+    let planetCircum = planets_list.bodies[number].circumference;
+    let planetDistance = planets_list.bodies[number].distance;
+    let planetMaxTemp = planets_list.bodies[number].temp.day;
+    let planetMinTemp = planets_list.bodies[number].temp.night;
+    let planet_Moons = planets_list.bodies[number].moons; //ARRAY!!!! Gör en egen funktion för att nå eventuella månar?
     h1.innerHTML='';
     let template = `
     <article>
         <h1>${planetName}</h1>
-        <p>Class: ${planetInfo}</p>
+        <p><em>${planetLatinName}</em></p>
+        <p>${planetDesc}</p>
+        <p>Omkrets: ${planetCircum}</p>
+        <p>Km från solen: ${planetDistance}</p>
+        <p>Temperatur dagstid: ${planetMaxTemp}</p>
+        <p>Temperatur nattetid: ${planetMinTemp}</p>
     </article>
     `
     h1.insertAdjacentHTML('beforeend', template);
