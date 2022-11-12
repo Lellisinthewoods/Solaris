@@ -147,3 +147,8 @@ background: #C9D4F1;
     
     background: #7A91A7;
 }
+
+article{
+    display:grid;
+    
+}
