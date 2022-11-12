@@ -7,17 +7,24 @@ body{
     margin:0;
     max-width: 100%;
     background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(12,22,75,1) 48%);
+    background: linear-gradient(90deg, rgba(12, 22, 77, 1) 0%, rgba(25, 11, 34, 1) 48%);
     color:white;
 }
 
 header{
     min-height: 100px;
-    font-size:3rem;
     display:flex;
     justify-content: flex-end;
     align-items: center;
     padding-right:4rem;
+}
+
+h1{
+    font-size:3rem;
+}
+
+h3{
+    font-size:1rem;
 }
 
 nav{
