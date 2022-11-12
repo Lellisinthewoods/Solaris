@@ -1,15 +1,15 @@
 const BASE_URL = 'https://fathomless-shelf-54969.herokuapp.com';
 const API_KEY =`solaris-vKkkQHqQboi7c6JF`; //HÅRDKODAD NYCKEL
 let planets_list = [];
-let button0 = document.getElementById(`0`);
-let button1 = document.getElementById(`1`);
-let button2 = document.getElementById(`2`);
-let button3 = document.getElementById(`3`);
-let button4 = document.getElementById(`4`);
-let button5 = document.getElementById(`5`);
-let button6 = document.getElementById(`6`);
-let button7 = document.getElementById(`7`);
-let button8 = document.getElementById(`8`);
+let button0 = document.getElementById(`sun`);
+let button1 = document.getElementById(`mercury`);
+let button2 = document.getElementById(`venus`);
+let button3 = document.getElementById(`earth`);
+let button4 = document.getElementById(`mars`);
+let button5 = document.getElementById(`jupiter`);
+let button6 = document.getElementById(`saturn`);
+let button7 = document.getElementById(`uranus`);
+let button8 = document.getElementById(`neptune`);
 let h1 = document.getElementById(`h1`);
 let p = document.querySelector(`p`);
 
