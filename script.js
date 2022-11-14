@@ -11,6 +11,9 @@ let button6 = document.getElementById(`saturn`);
 let button7 = document.getElementById(`uranus`);
 let button8 = document.getElementById(`neptune`);
 let h1 = document.getElementById(`h1`);
+let navArea = document.querySelector(`nav`)
+let headerArea = document.querySelector(`header`)
+let articleArea = document.querySelector(`article`)
 let p = document.querySelector(`p`);
 
 /*async function getKey() 
@@ -36,19 +39,32 @@ async function getPlanets(number)
     let planetMaxTemp = planets_list.bodies[number].temp.day;
     let planetMinTemp = planets_list.bodies[number].temp.night;
     let planet_Moons = planets_list.bodies[number].moons; //ARRAY!!!! Gör en egen funktion för att nå eventuella månar?
-    h1.innerHTML='';
+    headerArea.style.display='none';
+    navArea.style.display='none';
     let template = `
-    <article>
-        <h1>${planetName}</h1>
-        <p><em>${planetLatinName}</em></p>
-        <p>${planetDesc}</p>
-        <p>Omkrets: ${planetCircum}</p>
-        <p>Km från solen: ${planetDistance}</p>
-        <p>Temperatur dagstid: ${planetMaxTemp}</p>
-        <p>Temperatur nattetid: ${planetMinTemp}</p>
-    </article>
+        <div class="grid-container">
+            <header>
+                <h1>${planetName}</h1><br>
+                <h4>${planetLatinName}</h4>
+            </header>
+            <hr>
+            <Main>
+                <p>${planetDesc}</p>
+            </Main>
+            <hr>
+            <Section> 
+                <p>Omkrets: ${planetCircum}</p>
+                <p>Km från solen: ${planetDistance} km</p>
+                <p>Temperatur dagstid: ${planetMaxTemp} C</p>
+                <p>Temperatur nattetid: ${planetMinTemp} C</p>
+            </Section>
+            <hr>
+            <footer>
+                <p>Månar: ${planet_Moons}</p>
+            </footer>
+        </div>
     `
-    h1.insertAdjacentHTML('beforeend', template);
+    articleArea.insertAdjacentHTML('beforeend', template);
 }
 
 async function displayPlanets(number) //behövs denna?
