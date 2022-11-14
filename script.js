@@ -42,21 +42,26 @@ async function getPlanets(number)
     headerArea.style.display='none';
     navArea.style.display='none';
     let template = `
+    <div id = 'planet'></div>
         <div class="grid-container">
             <header>
-                <h1>${planetName}</h1><br>
+                <h1>${planetName}</h1>
+                <br>
                 <h4>${planetLatinName}</h4>
             </header>
-            <hr>
             <Main>
                 <p>${planetDesc}</p>
             </Main>
             <hr>
             <Section> 
-                <p>Omkrets: ${planetCircum}</p>
-                <p>Km från solen: ${planetDistance} km</p>
-                <p>Temperatur dagstid: ${planetMaxTemp} C</p>
-                <p>Temperatur nattetid: ${planetMinTemp} C</p>
+                <div><h5>Omkrets</h5>
+                <p>${planetCircum} km</p></div>
+                <div><h5>Km från solen</h5>
+                <p>${planetDistance} km</p></div>
+                <div><h5>Temperatur dagstid</h5>
+                <p>${planetMaxTemp} C</p></div>
+                <div><h5>Temperatur nattetid</h5>
+                <p>${planetMinTemp} C</p></div>
             </Section>
             <hr>
             <footer>
@@ -64,6 +69,7 @@ async function getPlanets(number)
             </footer>
         </div>
     `
+    
     articleArea.insertAdjacentHTML('beforeend', template);
 }
 
