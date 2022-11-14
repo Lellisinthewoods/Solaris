@@ -15,6 +15,7 @@ let navArea = document.querySelector(`nav`)
 let headerArea = document.querySelector(`header`)
 let articleArea = document.querySelector(`article`)
 let p = document.querySelector(`p`);
+let planetColor;
 
 /*async function getKey() 
 {
@@ -38,7 +39,7 @@ async function getPlanets(number)
     let planetDistance = planets_list.bodies[number].distance;
     let planetMaxTemp = planets_list.bodies[number].temp.day;
     let planetMinTemp = planets_list.bodies[number].temp.night;
-    let planet_Moons = planets_list.bodies[number].moons; //ARRAY!!!! Gör en egen funktion för att nå eventuella månar?
+    let planet_Moons = planets_list.bodies[number].moons.join(', ');
     headerArea.style.display='none';
     navArea.style.display='none';
     let template = `
@@ -65,11 +66,16 @@ async function getPlanets(number)
             </Section>
             <hr>
             <footer>
-                <p>Månar: ${planet_Moons}</p>
+            <div>
+                <h5>Månar</h5>
+                <p>${planet_Moons}</p>
+                </div>
+                <a href="index.html"><p>Tillbaka till start</p></a>
             </footer>
         </div>
     `
-    
+    //let planetDiv = document.getElementById('planet');
+    //planetDiv.style.color = `${planetColor}`;
     articleArea.insertAdjacentHTML('beforeend', template);
 }
 
@@ -83,6 +89,7 @@ async function displayPlanets(number) //behövs denna?
 
 button0.addEventListener(`click`, function() {
     getPlanets(0);
+    planetColor = 'yellow';
 })
 
 button1.addEventListener(`click`, function() {
