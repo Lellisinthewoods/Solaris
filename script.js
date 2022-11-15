@@ -1,5 +1,5 @@
 const BASE_URL = 'https://fathomless-shelf-54969.herokuapp.com';
-const API_KEY =`solaris-vKkkQHqQboi7c6JF`; //HÅRDKODAD NYCKEL
+let API_KEY; //`solaris-vKkkQHqQboi7c6JF`;/HÅRDKODAD NYCKEL
 let planets_list = [];
 let button0 = document.getElementById(`sun`);
 let button1 = document.getElementById(`mercury`);
@@ -17,17 +17,19 @@ let articleArea = document.querySelector(`article`)
 let p = document.querySelector(`p`);
 let planetColor;
 
-/*async function getKey() 
+async function getKey() 
 {
     const response = await fetch(`${BASE_URL}/keys`, { method: 'POST' });
     const key_data = await response.json();
-    API_KEY = key_data;
-}*/
+    API_KEY = key_data.key;
+    return key_data.key;
+}
 
 async function getPlanets(number) 
 {
-    //getKey();
-    let response = await fetch("https://fathomless-shelf-54969.herokuapp.com/bodies", {
+    API_KEY = await getKey();
+    console.log(API_KEY)
+    let response = await fetch(`${BASE_URL}/bodies`, {
         method: "GET",
         headers: { "x-zocom": `${API_KEY}`},
       });
