@@ -28,7 +28,6 @@ async function getKey()
 async function getPlanets(number) 
 {
     API_KEY = await getKey();
-    console.log(API_KEY)
     let response = await fetch(`${BASE_URL}/bodies`, {
         method: "GET",
         headers: { "x-zocom": `${API_KEY}`},
@@ -116,6 +115,7 @@ button5.addEventListener(`click`, function() {
 
 button6.addEventListener(`click`, function() {
     getPlanets(6);
+    console.log("click!")
 })
 
 button7.addEventListener(`click`, function() {

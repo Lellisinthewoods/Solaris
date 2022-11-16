@@ -54,7 +54,7 @@ nav{
     grid-template-columns: repeat(9,1fr);
     grid-template-areas: 
     "#sun #mercury #venus #earth #mars #jupiter #saturn #uranus #neptune";*/
-    padding-left: 5rem;
+    padding-left: 9rem;
     padding-right: 1rem;
     display:flex;
     align-items: center;
@@ -135,28 +135,22 @@ background: #428ED5;
     background: #E29468;
 }
 
-#saturnDiv{
-    position:relative;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    z-index:0
+#saturn-container{
+    position: relative;
 }
+
 #saturn{
     width: 144px;
     height: 144px;
-    left: 875px;
-    top: 378px;
 
     background: #C7AA72;
-    z-index: 0;
+    /*z-index: -10;*/
 }
 
 #saturnRing{
+    position:absolute;
     width: 200px;
     height: 10px;
-    left: 846.13px;
-    top: 451.18px;
 
     background: rgba(255, 255, 255, 0.4);
     transform: rotate(-30deg);
