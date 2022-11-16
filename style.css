@@ -48,22 +48,19 @@ p{
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-div{
-    padding:1rem;
-}
-
 nav{
     margin: 0;
     /*display: grid;
     grid-template-columns: repeat(9,1fr);
     grid-template-areas: 
     "#sun #mercury #venus #earth #mars #jupiter #saturn #uranus #neptune";*/
-    padding-right: 3rem;
+    padding-left: 5rem;
+    padding-right: 1rem;
     display:flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1000px;
-    max-height: 500px;
+    /*max-width: 1000px;
+    max-height: 500px;*/
 }
 
 button{
@@ -95,7 +92,6 @@ button{
 }
 
 #mercury{
-    position: absolute;
     width: 14px;
     height: 14px;
     left: 203px;
@@ -104,7 +100,6 @@ button{
 }
 
 #venus{
-    position: absolute;
 width: 26px;
 height: 26px;
 left: 280px;
@@ -114,7 +109,6 @@ background: #E7CDCD;
 }
 
 #earth{
-    position: absolute;
 width: 28px;
 height: 28px;
 left: 373px;
@@ -124,7 +118,6 @@ background: #428ED5;
 }
 
 #mars{
-    position: absolute;
     width: 14px;
     height: 14px;
     left: 473px;
@@ -134,7 +127,6 @@ background: #428ED5;
 }
 
 #jupiter{
-    position: absolute;
     width: 188px;
     height: 188px;
     left: 576px;
@@ -143,32 +135,38 @@ background: #428ED5;
     background: #E29468;
 }
 
+#saturnDiv{
+    position:relative;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    z-index:0
+}
 #saturn{
-    position: absolute;
     width: 144px;
     height: 144px;
     left: 875px;
     top: 378px;
 
     background: #C7AA72;
+    z-index: 0;
 }
 
 #saturnRing{
-position: absolute;
-width: 218.23px;
-height: 10px;
-left: 846.13px;
-top: 451.18px;
+    width: 200px;
+    height: 10px;
+    left: 846.13px;
+    top: 451.18px;
 
-background: rgba(255, 255, 255, 0.4);
-transform: rotate(-30deg);
-padding: 0;
+    background: rgba(255, 255, 255, 0.4);
+    transform: rotate(-30deg);
+    padding: 0;
+    z-index:10;
 }
 
 
 
 #uranus{
-    position: absolute;
     width: 66px;
     height: 66px;
     left: 1136px;
@@ -178,7 +176,6 @@ background: #C9D4F1;
 }
 
 #neptune{
-    position: absolute;
     width: 66px;
     height: 66px;
     left: 1306px;
