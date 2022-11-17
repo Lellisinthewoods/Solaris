@@ -50,17 +50,11 @@ p{
 
 nav{
     margin: 0;
-    /*display: grid;
-    grid-template-columns: repeat(9,1fr);
-    grid-template-areas: 
-    "#sun #mercury #venus #earth #mars #jupiter #saturn #uranus #neptune";*/
-    padding-left: 9rem;
+    padding-left: 9rem; /*9rem eftersom det som syns av solen är 80rem - 27rem*/
     padding-right: 1rem;
     display:flex;
     align-items: center;
     justify-content: space-between;
-    /*max-width: 1000px;
-    max-height: 500px;*/
 }
 
 button{
@@ -79,6 +73,7 @@ button{
     left: -72rem;
     top: -12rem;
     border-radius: 50%;
+    overflow: hidden;
 }
 
 #planet{
@@ -178,8 +173,6 @@ background: #C9D4F1;
 }
 
 article{
-    /*width:100%;
-    height: 100vh;*/
     display: flex;
     align-items: center;
     justify-content: center;

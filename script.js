@@ -1,5 +1,5 @@
 const BASE_URL = 'https://fathomless-shelf-54969.herokuapp.com';
-let API_KEY; //`solaris-vKkkQHqQboi7c6JF`;/HÅRDKODAD NYCKEL
+let API_KEY; 
 let planets_list = [];
 let button0 = document.getElementById(`sun`);
 let button1 = document.getElementById(`mercury`);
@@ -21,7 +21,6 @@ async function getKey()
 {
     const response = await fetch(`${BASE_URL}/keys`, { method: 'POST' });
     const key_data = await response.json();
-    API_KEY = key_data.key;
     return key_data.key;
 }
 
@@ -75,17 +74,7 @@ async function getPlanets(number)
             </footer>
         </div>
     `
-    //let planetDiv = document.getElementById('planet');
-    //planetDiv.style.color = `${planetColor}`;
     articleArea.insertAdjacentHTML('beforeend', template);
-}
-
-async function displayPlanets(number) //behövs denna?
-{
-    /*for (const planet of planets)
-    {
-        console.log(planet)
-    }*/
 }
 
 button0.addEventListener(`click`, function() {
