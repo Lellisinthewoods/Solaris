@@ -15,7 +15,6 @@ let navArea = document.querySelector(`nav`)
 let headerArea = document.querySelector(`header`)
 let articleArea = document.querySelector(`article`)
 let p = document.querySelector(`p`);
-let planetColor;
 
 async function getKey() 
 {
@@ -79,7 +78,6 @@ async function getPlanets(number)
 
 button0.addEventListener(`click`, function() {
     getPlanets(0);
-    planetColor = 'yellow';
 })
 
 button1.addEventListener(`click`, function() {

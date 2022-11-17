@@ -95,21 +95,21 @@ button{
 }
 
 #venus{
-width: 26px;
-height: 26px;
-left: 280px;
-top: 437px;
+    width: 26px;
+    height: 26px;
+    left: 280px;
+    top: 437px;
 
-background: #E7CDCD;
+    background: #E7CDCD;
 }
 
 #earth{
-width: 28px;
-height: 28px;
-left: 373px;
-top: 436px;
+    width: 28px;
+    height: 28px;
+    left: 373px;
+    top: 436px;
 
-background: #428ED5;
+    background: #428ED5;
 }
 
 #mars{
@@ -152,15 +152,13 @@ background: #428ED5;
     z-index:10;
 }
 
-
-
 #uranus{
     width: 66px;
     height: 66px;
     left: 1136px;
     top: 417px;
 
-background: #C9D4F1;
+    background: #C9D4F1;
 }
 
 #neptune{
