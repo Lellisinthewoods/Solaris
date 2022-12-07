@@ -9,7 +9,8 @@ let navArea = document.querySelector(`nav`)
 let headerArea = document.querySelector(`header`)
 let articleArea = document.querySelector(`article`)
 let addFavoriteBTN;
-
+let seeFavoritesBTN;
+let database = getFirestore(app);
 
 async function getPlanets(number) 
 {
@@ -62,6 +63,7 @@ async function getPlanets(number)
                 </div>
                 <a href="index.html"><p>Tillbaka till start</p></a>
                 <button id="addFavorite">Lägg till som favorit!</button>
+                <button id="seeFavorites">Se favoritplaneter!</button>
             </footer>
         </div>
     `
@@ -71,11 +73,27 @@ async function getPlanets(number)
     addFavoriteBTN.addEventListener(`click`, () =>{
         addFavoriteFunction(planetName, planetDesc)
     })
+    seeFavoritesBTN = document.querySelector(`#seeFavorites`);
+    seeFavoritesBTN.addEventListener(`click`, ()=>{
+        seeFavoritesFunction();
+    })
 }
 
 async function addFavoriteFunction (planetName, planetDesc){
-    //lägg till planetname + planetdesc i firestore
-    console.log(planetName, planetDesc);
+    await addDoc(collection(database, "SOLARIS-DATABASE"), {
+        description: planetDesc,
+        planet: planetName,
+    });
+}
+
+async function seeFavoritesFunction (){
+    const planets = await getDocs(collection(database, "SOLARIS-DATABASE"));
+    planets.forEach((planet) => {
+        console.log(planet.data().planet)
+        console.log(planet.data().description)
+        //const elem = `<li data-todo-id="${todo.id}">${todo.data().todo}</li>`;
+        //todosElem.insertAdjacentHTML('beforeend', elem);
+    });
 }
 
 export {getPlanets}
