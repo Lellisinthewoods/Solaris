@@ -1,4 +1,6 @@
-//import { getKey } from "./api.js";
+//import { getKey } from "./firebase.js";
+
+import { app, getFirestore, collection, addDoc, getDocs } from "./myFirebase.js";
 
 //const BASE_URL = 'https://my-json-server.typicode.com/zocom-christoffer-wallenberg/solaris-api';
 //let API_KEY; 
@@ -15,7 +17,7 @@ async function getPlanets(number)
         method: "GET",
         headers: { "x-zocom": `${API_KEY}`},
       });*/
-    let data = await fetch('data.json')
+    let data = await fetch('myPlanetsData.json')
     console.log(data);
     planets_list = await data.json();
     console.log(planets_list)

@@ -1,5 +1,5 @@
 
-import { getPlanets } from "./getPlanets.js";
+import { getPlanets } from "./myGetPlanets.js";
 
 let button0 = document.getElementById(`sun`);
 let button1 = document.getElementById(`mercury`);
