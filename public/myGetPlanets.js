@@ -8,6 +8,7 @@ let planets_list = [];
 let navArea = document.querySelector(`nav`)
 let headerArea = document.querySelector(`header`)
 let articleArea = document.querySelector(`article`)
+let addFavoriteBTN;
 
 
 async function getPlanets(number) 
@@ -60,10 +61,21 @@ async function getPlanets(number)
                 <p>${planet_Moons}</p>
                 </div>
                 <a href="index.html"><p>Tillbaka till start</p></a>
+                <button id="addFavorite">Lägg till som favorit!</button>
             </footer>
         </div>
     `
     articleArea.insertAdjacentHTML('beforeend', template);
+    addFavoriteBTN = document.querySelector(`#addFavorite`);
+    console.log(addFavoriteBTN);
+    addFavoriteBTN.addEventListener(`click`, () =>{
+        addFavoriteFunction(planetName, planetDesc)
+    })
+}
+
+async function addFavoriteFunction (planetName, planetDesc){
+    //lägg till planetname + planetdesc i firestore
+    console.log(planetName, planetDesc);
 }
 
 export {getPlanets}

@@ -170,6 +170,18 @@ button{
     background: #7A91A7;
 }
 
+#addFavorite{
+    border-radius: 0;
+    width:auto;
+    height: auto;
+    padding:0.5rem;
+    background-color: rgba(25, 11, 34, 1);
+}
+
+#addFavorite:hover{
+    background-color: rgba(12, 22, 77, 1);
+}
+
 article{
     display: flex;
     align-items: center;

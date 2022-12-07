@@ -1,4 +1,3 @@
-
 import { getPlanets } from "./myGetPlanets.js";
 
 let button0 = document.getElementById(`sun`);
