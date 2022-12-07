@@ -1,22 +1,24 @@
-import { getKey } from "./api.js";
+//import { getKey } from "./api.js";
 
-const BASE_URL = 'https://fathomless-shelf-54969.herokuapp.com';
-let API_KEY; 
+//const BASE_URL = 'https://my-json-server.typicode.com/zocom-christoffer-wallenberg/solaris-api';
+//let API_KEY; 
 let planets_list = [];
 let navArea = document.querySelector(`nav`)
 let headerArea = document.querySelector(`header`)
 let articleArea = document.querySelector(`article`)
 
 
-
 async function getPlanets(number) 
 {
-    API_KEY = await getKey(BASE_URL);
-    let response = await fetch(`${BASE_URL}/bodies`, {
+    /*API_KEY = await getKey(BASE_URL); //DETTA ÄR FÖR DET GAMLA API:ET
+    let response = await fetch('./data.json');, {
         method: "GET",
         headers: { "x-zocom": `${API_KEY}`},
-      });
-    planets_list = await response.json();
+      });*/
+    let data = await fetch('data.json')
+    console.log(data);
+    planets_list = await data.json();
+    console.log(planets_list)
     let planetName = planets_list.bodies[number].name;
     let planetDesc = planets_list.bodies[number].desc;
     let planetLatinName = planets_list.bodies[number].latinName;
