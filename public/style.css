@@ -170,26 +170,16 @@ button{
     background: #7A91A7;
 }
 
-#addFavorite{
+.choiceBTN{
     border-radius: 0;
     width:auto;
     height: auto;
     padding:0.5rem;
     background-color: rgba(25, 11, 34, 1);
+    margin:1rem;
 }
 
-#addFavorite:hover{
-    background-color: rgba(12, 22, 77, 1);
-}
-
-#seeFavorites{
-    border-radius: 0;
-    width:auto;
-    height: auto;
-    padding:0.5rem;
-    background-color: rgba(25, 11, 34, 1);
-}
-#seeFavorites:hover{
+.choiceBTN:hover{
     background-color: rgba(12, 22, 77, 1);
 }
 

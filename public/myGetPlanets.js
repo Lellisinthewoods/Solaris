@@ -11,6 +11,7 @@ let articleArea = document.querySelector(`article`)
 let addFavoriteBTN;
 let seeFavoritesBTN;
 let database = getFirestore(app);
+let planetsListElem;
 
 async function getPlanets(number) 
 {
@@ -62,8 +63,9 @@ async function getPlanets(number)
                 <p>${planet_Moons}</p>
                 </div>
                 <a href="index.html"><p>Tillbaka till start</p></a>
-                <button id="addFavorite">Lägg till som favorit!</button>
-                <button id="seeFavorites">Se favoritplaneter!</button>
+                <button class="choiceBTN" id="addFavorite">Lägg till som favorit!</button>
+                <button class="choiceBTN" id="seeFavorites">Se favoritplaneter!</button>
+                <ul id="planetsList"></ul>
             </footer>
         </div>
     `
@@ -77,6 +79,7 @@ async function getPlanets(number)
     seeFavoritesBTN.addEventListener(`click`, ()=>{
         seeFavoritesFunction();
     })
+    planetsListElem = document.querySelector("#planetsList");
 }
 
 async function addFavoriteFunction (planetName, planetDesc){
@@ -91,8 +94,8 @@ async function seeFavoritesFunction (){
     planets.forEach((planet) => {
         console.log(planet.data().planet)
         console.log(planet.data().description)
-        //const elem = `<li data-todo-id="${todo.id}">${todo.data().todo}</li>`;
-        //todosElem.insertAdjacentHTML('beforeend', elem);
+        const elem = `<li data-planet-id="${planet.data().planet}">${planet.data().planet} <button id="deletePlanet" class="choiceBTN">Ta bort</button></li>`;
+        planetsListElem.insertAdjacentHTML('beforeend', elem);
     });
 }
 
