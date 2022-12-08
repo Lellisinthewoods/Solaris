@@ -96,36 +96,21 @@ async function seeFavoritesFunction (){
         const elem = `<li data-planet-id="${planet.data().planet}">${planet.data().planet} <button id="deletePlanet${planetIndex}" class="choiceBTN">Ta bort</button></li>`;
         planetsListElem.insertAdjacentHTML('beforeend', elem);
         let deletePlanetBTNS = document.querySelectorAll(`#deletePlanet${planetIndex}`);
-        //console.log(deletePlanetBTNS)
         deletePlanetBTNS.forEach(btn => {
             btn.addEventListener(`click`, ()=> {
                 console.log(btn.id)
                 deletePlanetFunction(planet.id, planet.data());
             })
-        });{
-                /*deletePlanetBTNS.addEventListener(`click`, ()=> {
-                    console.log(deletePlanetBTNS[planetIndex]);
-                })*/
-                //deletePlanetFunction(planet.data().planet);
-        }
-        /*console.log(deletePlanetBTN);
-        deletePlanetBTN.addEventListener(`click`,()=>{
-            deletePlanetFunction(planet.data());
-        })*/
+        });
         planetIndex++;
     });
 }
 
 async function deletePlanetFunction(planetID, planetData){
-    //debugger;
     console.log(planetID)
     console.log(planetData)
     try{
         await deleteDoc(doc(database,'SOLARIS-DATABASE', planetID));
-        /*await addDoc(collection(database, 'deletedPlanets'), { // Lägger till den todo som raderas i en annan collections som heter completedTodos
-            planet: planetName,
-            description: planetDesc, 
-        });*/
     } catch{
         console.error('nu gick det jääääääääääävligt fel här', Error);
     }
